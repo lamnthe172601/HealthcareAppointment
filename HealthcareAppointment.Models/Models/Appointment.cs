@@ -9,11 +9,15 @@ public partial class Appointment
 {
     public string Id { get; set; }
 
-    public string Patientld { get; set; }
+    public string PatientId { get; set; }
 
     public string DoctorId { get; set; }
 
-    public DateTime? Date { get; set; }
+    public DateTime Date { get; set; }
 
-    public int? Status { get; set; }
+    public int Status { get; set; }
+
+    public virtual User Doctor { get; set; }
+
+    public virtual User Patient { get; set; }
 }

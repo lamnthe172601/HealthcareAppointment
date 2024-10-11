@@ -17,7 +17,11 @@ public partial class User
 
     public string Password { get; set; }
 
-    public int? Role { get; set; }
+    public int Role { get; set; }
 
     public string Specialization { get; set; }
+
+    public virtual ICollection<Appointment> AppointmentDoctors { get; set; } = new List<Appointment>();
+
+    public virtual ICollection<Appointment> AppointmentPatients { get; set; } = new List<Appointment>();
 }

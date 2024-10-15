@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HealthcareAppointment.Models.Models;
 
@@ -21,6 +22,12 @@ public partial class User
 
     public string Specialization { get; set; }
 
+    [NotMapped]
+    public UserType UserType
+    {
+        get => (UserType)Role;
+        set => Role = (int)value;
+    }
     public virtual ICollection<Appointment> AppointmentDoctors { get; set; } = new List<Appointment>();
 
     public virtual ICollection<Appointment> AppointmentPatients { get; set; } = new List<Appointment>();

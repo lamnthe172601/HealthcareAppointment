@@ -72,6 +72,8 @@ public partial class HealthcareAppointmentContext : DbContext
                 .IsRequired()
                 .HasMaxLength(255);
         });
+       
+
 
         OnModelCreatingPartial(modelBuilder);
       

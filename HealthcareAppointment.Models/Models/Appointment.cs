@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HealthcareAppointment.Models.Models;
 
@@ -16,6 +17,12 @@ public partial class Appointment
     public DateTime Date { get; set; }
 
     public int Status { get; set; }
+    [NotMapped]
+    public AppointmentStatus AppointmentStatus
+    {
+        get => (AppointmentStatus)Status;
+        set => Status = (int)value;
+    }
 
     public virtual User Doctor { get; set; }
 
